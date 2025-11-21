@@ -15,14 +15,14 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="student in students" :key="student.idEtudiant">
+        <tr v-for="student in students" :key="student.numeroEtudiant">
           <td>{{ student.numeroEtudiant }}</td>
           <td>{{ student.nom }}</td>
           <td>{{ student.prenom }}</td>
           <td>
             <span 
               class="grade-link"
-              @click="$emit('show-grades', student.idEtudiant, 1)"
+              @click="$emit('show-grades', student.numeroEtudiant, 1)"
               :class="getGradeClass(student.moyennes?.s1)"
             >
               {{ student.moyennes?.s1?.toFixed(2) || '-' }}
@@ -31,7 +31,7 @@
           <td>
             <span 
               class="grade-link"
-              @click="$emit('show-grades', student.idEtudiant, 2)"
+              @click="$emit('show-grades', student.numeroEtudiant, 2)"
               :class="getGradeClass(student.moyennes?.s2)"
             >
               {{ student.moyennes?.s2?.toFixed(2) || '-' }}
@@ -40,7 +40,7 @@
           <td>
             <span 
               class="grade-link"
-              @click="$emit('show-grades', student.idEtudiant, 3)"
+              @click="$emit('show-grades', student.numeroEtudiant, 3)"
               :class="getGradeClass(student.moyennes?.s3)"
             >
               {{ student.moyennes?.s3?.toFixed(2) || '-' }}
@@ -49,7 +49,7 @@
           <td>
             <span 
               class="grade-link"
-              @click="$emit('show-grades', student.idEtudiant, 4)"
+              @click="$emit('show-grades', student.numeroEtudiant, 4)"
               :class="getGradeClass(student.moyennes?.s4)"
             >
               {{ student.moyennes?.s4?.toFixed(2) || '-' }}
@@ -57,7 +57,7 @@
           </td>
           <td>
             <button 
-              @click="$emit('student-selected', student)"
+              @click="$emit('student-selected', student.numeroEtudiant)"
               class="btn btn-info"
             >
               Détails

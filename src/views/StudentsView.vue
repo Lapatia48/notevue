@@ -125,20 +125,32 @@ export default {
         params: { id: student.idEtudiant }
       });
     },
-    async onShowGrades(studentId, semesterId) {
-      this.loading = true;
-      try {
-        const response = await notesAPI.getStudentSemesterGrades(studentId, semesterId);
+    async onShowGrades(numeroEtudiant, semesterId) {
+        this.loading = true;
+        try {
+        const response = await notesAPI.getStudentSemesterGrades(numeroEtudiant, semesterId);
         this.selectedGrades = response.data;
-        this.selectedStudent = this.students.find(s => s.idEtudiant === studentId);
+        
+        // Trouver l'étudiant par son numéro
+        this.selectedStudent = this.students.find(s => s.numeroEtudiant === numeroEtudiant);
+        
+        // Si l'étudiant n'est pas trouvé dans la liste, créer un objet basique
+        if (!this.selectedStudent && this.selectedGrades.length > 0) {
+            this.selectedStudent = {
+            numeroEtudiant: numeroEtudiant,
+            nom: this.selectedGrades[0].nom,
+            prenom: this.selectedGrades[0].prenom
+            };
+        }
+        
         this.selectedSemester = semesterId;
         this.showGradesModal = true;
-      } catch (error) {
+        } catch (error) {
         console.error('Erreur lors du chargement des notes:', error);
         alert('Erreur lors du chargement des notes');
-      } finally {
+        } finally {
         this.loading = false;
-      }
+        }
     }
   }
 }
