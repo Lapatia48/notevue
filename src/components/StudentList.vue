@@ -15,8 +15,16 @@
       </thead>
       <tbody>
         <tr v-for="student in students" :key="student.numeroEtudiant">
-          <td>{{ student.numeroEtudiant }}</td>
-          <td>{{ student.nom }}</td>
+        <td>
+        <router-link 
+            :to="{ name: 'etudiant-detail', params: { id: student.numeroEtudiant } }"
+            class="student-link"
+        >
+            {{ student.numeroEtudiant }}
+        </router-link>
+        </td>      
+            
+        <td>{{ student.nom }}</td>
           <td>{{ student.prenom }}</td>
           <td>
             <span 
@@ -90,6 +98,17 @@ export default {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
+}
+
+.student-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.student-link:hover {
+  text-decoration: underline;
+  color: #0056b3;
 }
 
 .students-table th,

@@ -18,7 +18,7 @@
 
     <footer class="footer">
       <div class="footer-content">
-        <p>&copy; 2025 Système de Gestion des Notes - Université</p>
+        <p>&copy; ITU notes application</p>
       </div>
     </footer>
   </div>
