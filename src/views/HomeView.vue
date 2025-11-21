@@ -2,26 +2,17 @@
   <div class="home-view">
     <div class="hero">
       <h1>Système de Gestion des Notes</h1>
-      <p>Application de consultation des notes et résultats académiques</p>
     </div>
 
     <div class="features">
       <div class="feature-card">
-        <h3>📚 Semestres</h3>
-        <p>Consulter les notes par semestre</p>
+        <h3> Semestres</h3>
+        <p>Consultation de note par semestre</p><br>
         <router-link to="/semestres" class="btn btn-primary">
           Voir les semestres
         </router-link>
       </div>
-      
-      <div class="feature-card">
-        <h3>👨‍🎓 Étudiants</h3>
-        <p>Rechercher et consulter les résultats des étudiants</p>
-        <button @click="navigateToStudents" class="btn btn-primary">
-          Voir les étudiants
-        </button>
-      </div>
-      
+            
       
     </div>
 

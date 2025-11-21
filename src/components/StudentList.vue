@@ -11,7 +11,6 @@
           <th>Moyenne S2</th>
           <th>Moyenne S3</th>
           <th>Moyenne S4</th>
-          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -54,14 +53,6 @@
             >
               {{ student.moyennes?.s4?.toFixed(2) || '-' }}
             </span>
-          </td>
-          <td>
-            <button 
-              @click="$emit('student-selected', student.numeroEtudiant)"
-              class="btn btn-info"
-            >
-              Détails
-            </button>
           </td>
         </tr>
       </tbody>

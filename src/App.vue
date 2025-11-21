@@ -3,7 +3,7 @@
     <nav class="navbar">
       <div class="nav-container">
         <router-link to="/" class="nav-brand">
-          🎓 NotesApp
+           ITongasoa
         </router-link>
         <div class="nav-links">
           <router-link to="/" class="nav-link">Accueil</router-link>

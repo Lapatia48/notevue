@@ -43,10 +43,10 @@ export default {
         this.loading = true;
         try {
         const response = await notesAPI.getSemesters();
-        console.log('Données reçues:', response.data); // DEBUG
+        console.log('Données reçues:', response.data); 
         this.semesters = response.data;
         } catch (error) {
-        console.error('Erreur détaillée:', error); // DEBUg
+        console.error('Erreur détaillée:', error); 
         console.error('Erreur lors du chargement des semestres:', error);
         alert('Erreur lors du chargement des semestres');
         } finally {
